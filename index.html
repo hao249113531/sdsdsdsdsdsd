@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>保定浩天博物馆</title>
+   
+    <link href="https://www.szmuseum.com/StaticFile/Scripts/fullpage/css/jquery.fullPage.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.szmuseum.com/StaticFile/Styles/homeindex.css?d=20190521" rel="stylesheet" type="text/css" />
+    <link href="https://www.szmuseum.com/StaticFile/Scripts/slideshow/css/lrtk.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/fullpage/js/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/fullpage/js/jquery.fullPage.min.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/slideshow/js/lrtk.js" type="text/javascript"></script>
+    
+    <link href="https://www.szmuseum.com/StaticFile/Scripts/jQuery.layer/skin/layer.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/jQuery.layer/layer.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/jquery.reveal.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/md5.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/account.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/imgReady.js" type="text/javascript"></script>
+    <link href="https://www.szmuseum.com/StaticFile/Scripts/scoll/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/scoll/jquery.mousewheel.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/scoll/jquery.jscrollpane.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/index.js" type="text/javascript"></script>
+    <script src="https://www.szmuseum.com/StaticFile/Scripts/floatwindow.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var types = "";
+        if (/Android|webOS| iPhone | iPad | iPod |BlackBerry|opera mini|opera mobile|appleWebkit.*mobile|mobile/i.test(navigator.userAgent)) {
+            if (types != "PC") {
+                window.location = '/Wap/Home/Index';
+            }
+        }
+    </script>
+    <style type="text/css">
+	
+	 
+	
+        body, html
+        {
+            min-width: 1366px;
+            min-height: 550px;
+            position: relative;
+            height: 100%;
+        }
+    </style>
+    <script type="text/javascript">
+        //第三屏图片hover效果
+        function page3Hover() {
+            var zoom = 1.1;
+            $(".section3 .item").hover(function () {
+                var id = $(this).attr("id");
+                var width = $(this).width() * zoom;
+                var height = $(this).height() * zoom;
+                if (id == "jlhd") {
+                    $(this).find("img").stop().animate({ "width": width, "height": height }, { duration: 300 });
+                } else {
+                    $(this).find("img").stop().animate({ "width": width, "height": "auto" }, { duration: 300 });
+                }
+
+            }, function () {
+                var id = $(this).attr("id");
+                var width = $(this).width();
+                var oheight = $(this).height();
+                if (id == "jlhd") {
+                    $(this).find("img").stop().animate({ "width": width, "height": oheight }, { duration: 300 });
+                } else {
+                    $(this).find("img").stop().animate({ "width": width, "height": "auto" }, { duration: 300 });
+                }
+            });
+        }
+
+        $(function () {
+            $.fn.fullpage({
+                verticalCentered: false,
+                anchors: ['page1', 'page2', 'page3', 'page4'],
+                navigation: true,
+                loopBottom: true,
+                afterLoad: function (anchorLink, index) { //滚动到某一屏的回调函数，index从1开始
+                    if (index == 3) {
+                        page3Hover();
+                    }
+                },
+            });
+        });
+        $(window).resize(function () {
+            location.reload();
+        });
+    </script>
+	<style type="text/css">
+        .img3
+        {
+            z-index: 1000000;
+        }
+        
+        .img3 .closefly
+        {
+            color: #000;
+            text-decoration: underline;
+            display: block;
+            position: relative;
+            top: 0;
+            right: 3px;
+            text-align: right;
+        }
+        
+        .img3 .imgfly
+        {
+            display: block;
+            width: 142px;
+            height: 142px;
+        }
+    </style>
+</head>
+<body>
+<!--飘窗-->
+        <div id="img3" class="img3">
+            <a class="closefly" href="javascript:void(0)" onclick="$(this).parent().remove();" style="font-size:36px; list-style:none">欢迎来到保定浩天博物馆</a>
+            <a class="imgfly" href="http://www.szmuseum.com/News/Details/b1e05bfc-54fa-449d-afe5-df50f020c906">
+               
+            </a>
+        </div>
+        <script type="text/javascript">
+            (function ($) { $.fn.adFly = function (o) { o = $.extend({ step: 1, delay: 30, xPos: 100, yPos: 100 }, o || {}); return this.each(function () { var c = $(this); var xon = 0, yon = 0; function changePos() { var winW = $(window).width(), winH = $(window).height(), w = c.width(), h = c.height(); if (yon) { o.yPos = o.yPos + o.step } else { o.yPos = o.yPos - o.step } if (o.yPos < 0) { yon = 1; yPos = 0 } if (o.yPos >= (winH - h)) { yon = 0; o.yPos = (winH - h) } if (xon) { o.xPos = o.xPos + o.step } else { o.xPos = o.xPos - o.step } if (o.xPos < 0) { xon = 1; o.xPos = 0 } if (o.xPos >= (winW - w)) { xon = 0; o.xPos = (winW - w) } c.css({ position: "absolute", left: o.xPos + $(document).scrollLeft() + "px", top: o.yPos + $(document).scrollTop() + "px" }) } var interval; (function () { interval = setInterval(function () { changePos() }, o.delay) })(); c.mouseover(function () { clearInterval(interval) }).mouseout(function () { interval = setInterval(function () { changePos() }, o.delay) }) }) } })(jQuery);
+        </script>
+        <script type="text/javascript">
+            var x = 100;
+            var y = 100;
+            $("#img3").adFly({
+                xPos: x,
+                yPos: y
+            });
+
+            x += 150;
+            y += 250;
+        </script>
+    <!--end飘窗-->
+    <div class="indexcont">
+        <div class="head">
+            <div class="logo">
+                <img src="https://www.szmuseum.com/StaticFile/Images/index/logo-big.png">
+            </div>
+            <div class="headuser">
+                <span><a href="/Other/FullTextSearchIndex" target="_blank">搜索</a></span><i></i>
+                <span><a href="/Activity/VolunteerIndex" target="_blank">志愿者报名</a></span><i></i>
+                <span><a href="/Other/Leaveword" target="_blank">留言簿</a></span>| <span><a href="/Other/Questionnaire/ReleaseSurvey"
+                    target="_blank">问卷调查</a> </span>| <span><a href="/News/Details/ContactUs" target="_blank">
+                        联系我们 </a></span><i></i>
+                    <span id="ulLogin"><a id="login" href="#" data-reveal-id="myModal">登录</a>| <a href="/Account/Register">
+                        注册 </a></span><i></i>
+                    <input type="hidden" id="isLogin" value="0" />
+                <span><a href="/Home/Index">中文</a>| <a href="/En/Home/Index" style="padding-right: 0;">
+                    English </a></span>
+            </div>
+            <ul>
+                <li class="chose"><a href="/Home/Index">首页</a></li>
+                <li><a href="/News/Index/GZZC">资讯</a></li>
+                <li><a href="/Exhibition/Index">展览</a></li>
+                <li><a href="/Collection/Index">馆藏</a></li>
+                <li><a href="/ArtGoods/Index">文创</a></li>
+                <li><a href="/Activity/Index">活动</a></li>
+                <li><a href="/ForbiddenCityCollege/Index">故宫学院（保定）</a></li>
+                <li><a href="/Ancient/Details/gjgjj" style="margin-right: 0;">古籍图书馆</a></li>
+            </ul>
+        </div>
+        <div class="fullPage" id="fullPage">
+            <div class="section section1">
+                <div class="bg">
+                    <img class="imgbg" src="https://www.szmuseum.com/StaticFile/Images/index/img2.jpg" />
+                    <i>
+                        <img src="https://www.szmuseum.com/StaticFile/Images/index/img1center.png" />
+                    </i>
+                </div>
+            </div>
+            <div class="section section2">
+                <div class="slide-main" id="touchMain">
+                    <a class="prev" href="javascript:;" stat="prev1001">
+                        <img src="https://www.szmuseum.com/StaticFile/Images/index/l-btn.png" />
+                    </a>
+                    <div class="slide-box" id="slideContent">
+                            <div class="slide">
+                                <div class="section2-left">
+                                    <i>
+                                        <img src="https://www.szmuseum.com/StaticFile/Images/index/img1center.png" />
+                                    </i>
+                                    <div class="section2-cont">
+                                        <span class="year">2019</span> <span class="date">9.6</span>
+                                            <span class="title" style="color: "><a href="http://www.szmuseum.com/Exhibition/TemporaryDetails/741efabf-bab4-484b-89c3-d7b352fcf9f6?startYear=2019-09-04" target="_blank">画屏：传统与未来</a><br />
+                                                <a href="http://www.szmuseum.com/Exhibition/TemporaryDetails/741efabf-bab4-484b-89c3-d7b352fcf9f6?startYear=2019-09-04" target="_blank">展览时间： 2019年9月6日 - 12月6日</a> </span>
+                                        <div class="cont">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="section2-right">
+                                    <img src="https://file.szmuseum.com:8020/文章管理缩略图/20190904164429AWbrA1.jpg" />
+                                </div>
+                            </div>
+                    </div>
+                    <a class="next" href="javascript:;" stat="next1002">
+                        <img src="https://www.szmuseum.com/StaticFile/Images/index/r-btn.png" />
+                    </a>
+                    <div class="item">
+<a class="cur" stat="item1001" href="javascript:;"></a>                    </div>
+                </div>
+            </div>
+            <div class="section section3">
+                <div class="section3-left">
+                    <a href="/News/Index/GZZC">
+                        <div class="item zx">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/zx.jpg">
+                            <span>资讯</span>
+                        </div>
+                    </a><a href="http://www.szmuseum.com/kcxx/index.html?PNo=kindergarten&No=1" target="_blank">
+                        <div class="item xsyj" id="xsyj">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/xsyj.png">
+                            <span>课程</span>
+                        </div>
+                    </a><a href="/Collection/Index">
+                        <div class="item gc">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/gc.jpg">
+                            <span>馆藏</span>
+                        </div>
+                    </a><a href="/Activity/Index">
+                        <div class="item hd">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/hd.jpg">
+                            <span>活动</span>
+                        </div>
+                    </a><a href="/ArtGoods/Index">
+                        <div class="item wc">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/wc.jpg">
+                            <span>文创</span>
+                        </div>
+                    </a><a href="http://www.szmuseum.com/0pano/DigitalMus/HDView.html" target="_blank">
+                        <div class="item jlhd" id="jlhd">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/jlhg.jpg">
+                            <span>虚拟展厅</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="section3-right">
+                    <a href="/Exhibition/Index">
+                        <div class="item zl">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/zl.jpg">
+                            <span>展览</span>
+                        </div>
+                    </a><a href="/Activity/Game/hdyx">
+                        <div class="item yx">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/yx.jpg">
+                            <span>游戏</span>
+                        </div>
+                    </a><a href="/Other/MuseumIntro">
+                        <div class="item ggxy">
+                            <img src="https://www.szmuseum.com/StaticFile/Images/index/jzmt.jpg">
+                            <span>建筑美图</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="section section4">
+                <div class="section2-right section4-left">
+                    <img src="https://www.szmuseum.com/StaticFile/Images/index/section4_leftbg.jpg">
+                    <div class="section4-bg">
+                        <h1>
+                            开放时间
+                        </h1>
+                        <p>
+                            每星期二至星期日9:00-17:00（16:00停止入馆）
+                        </p>
+                        <p>
+                            每星期一闭馆（国家法定节假日除外）
+                        </p>
+                        <p>
+                            如有需要临时闭馆，届时将告示公众
+                        </p>
+                        <a href="/News/Index/OpenGuide"><span class="btn">参观指南</span></a>
+                    </div>
+                </div>
+                <div class="section2-right section4-right">
+                    <img src="https://www.szmuseum.com/StaticFile/Images/index/section4_rightbg.jpg" />
+                    <div class="section4-bg">
+                            <div id="divResHref">
+                                <a href="/Account/VenuesReservation"><span class="btn btn2">个人预约</span></a>
+                                <br>
+                                <a href="#" data-reveal-id="myModal"><span class="btn btn3">团队预约</span></a>
+                            </div>
+                        <p class="mt">
+                            每星期二至星期日9:00-17:00（16:00停止入馆）
+                        </p>
+                        <p>
+                            每星期一闭馆（国家法定节假日除外）
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="indexfoot">
+            <i class="up"></i>
+            <ul class="clearfix">
+                 <li>
+				 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1257378952'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1257378952%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+				</li>
+				<li class="suggest"><span>浏览建议</span><div class="hide">火狐 谷歌 360极速浏览器 最佳分辨率(1366*768)</div></li>
+                <li><i class="adress"></i><span>保定市东风路999号</span></li>
+                <li><i class="telephone"></i><span>0512-67575666</span></li>
+                <li><i class="mail"></i><span>215001</span></li>
+                <li>© 2010-2019 浩天博物馆 版权所有 <a href="http://beian.miit.gov.cn" target="_blank">冀ICP备06052086号</a></li>
+                <li class="indexfootli">
+				<span id="_ideConac"><a href="http://bszs.conac.cn/sitename?method=show&id=26588909EC22497BE053022819AC8E66" target="_blank"><img id="imgConac" vspace="0" hspace="0" border="0" src="http://dcs.conac.cn/image/blue.png" data-bd-imgshare-binded="1"></a></span>
+				<!--<script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/11/181/0000/60394357/CA111810000603943570001.js' type='text/javascript'%3E%3C/script%3E"));</script>-->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="indexbottom">
+        <div class="both">
+</div>
+<div class="link">
+    <div class="cont1 clearfix">
+        <span>友情链接：</span><a href="http://www.dpm.org.cn/" target="_blank">故宫博物院</a> <a href="http://www.britishmuseum.org/" target="_blank">大英博物馆</a><a href="http://www.szzzy.cn/"
+                    target="_blank">拙政园</a><a href="/Other/Link" target="_blank" class="more" style="margin-right: 0;">更多&gt;&gt;</a>
+    </div>
+</div>
+<div class="bottomnav">
+    <div class="cont1 clearfix" id="divBottom">
+        <!--        <ul class="qrcode">
+            <li>
+                <img src="/images/qr.png" /><br />
+                关注微信</li>
+            <li>
+                <img src="/images/qr.png" /><br />
+                关注微信</li>
+        </ul>-->
+        <ul class="menulist ">
+            <li><a href="/News/Index/GZZC" target="_self">资讯</a></li>
+            <li><a href="/News/Index/GZZC" target="_self">馆长致辞</a></li>
+            
+            <li><a href="/News/Index/Structure" target="_self">组织结构</a></li>
+            <li><a href="/News/Index/Dynamic" target="_self">最新动态</a></li>
+            <li><a href="/News/Index/OpenGuide" target="_self">开放信息</a></li>
+            <li><a href="/News/Index/LibraryJournal" target="_self">馆刊 / 年鉴</a></li>
+            <li><a href="/News/Index/DonorList" target="_self">捐赠者名录</a></li>
+            <li><a href="/News/Index/Memorabilia" target="_self">大事记</a></li>
+        </ul>
+        <ul class="menulist">
+            <li><a href="/Exhibition/Index" target="_self">展览</a></li>
+            <li><a href="/Exhibition/Index" target="_self">基本陈列</a></li>
+            <li><a href="/Exhibition/Temporary" target="_self">临时展览</a></li>
+            <li><a href="/Exhibition/Another" target="_self">赴外展览</a></li>
+            <li><a href="/Exhibition/Other/FolkCustomExhibition" target="_self">民俗博物馆</a></li>
+            <li><a href="/Exhibition/Other/Guoyunlou" target="_self">过云楼陈列馆</a></li>
+        </ul>
+        <ul class="menulist">
+            <li><a href="/Collection/Index" target="_self">馆藏</a></li>
+            <li><a href="/Collection/List/ltgb" target="_self">两塔瑰宝</a></li>
+            <li><a href="/Collection/List/mqsh" target="_self">书画</a></li>
+            <li><a href="/Collection/List/cq" target="_self">陶瓷</a></li>
+            <li><a href="/Collection/List/gyp" target="_self">工艺品</a></li>
+            <li><a href="/Collection/List/xy" target="_self">铜器</a></li>
+            <li><a href="/Collection/List/zwfch" target="_self">忠王府彩画</a></li>
+        </ul>
+        <ul class="menulist">
+            <li><a href="/AcademicResearch/List/zgqs" target="_self">学术研究</a></li>
+            <li><a href="/AcademicResearch/List/zgqs" target="_self">征稿启事</a></li>
+            <li><a href="/AcademicResearch/Index/xssl" target="_self">学术沙龙</a></li>
+            <li><a href="/AcademicResearch/List/xscg" target="_self">学术成果</a></li>
+            <li><a href="/AcademicResearch/Index/yjkt" target="_self">研究课题</a></li>
+        </ul>
+        <ul class="menulist">
+            <li><a href="/ArtGoods/Index" target="_self">文创</a></li>
+            <li><a href="/ArtGoods/Index" target="_self">文创产品</a></li>
+            
+            <li><a href="/ArtGoods/Details/sdjs" target="_self">商店介绍</a></li>
+            <li><a href="/ArtGoods/Details/gl" target="_self">概览</a></li>
+            <li><a href="/ArtGoods/List/xgzx" target="_self">相关资讯</a></li>
+            <li><a href="/ArtGoods/Details/lxwm" target="_self">联系我们</a></li>
+        </ul>
+        <ul class="menulist">
+            <li><a href="/Activity/Index" target="_self">活动</a></li>
+            <li><a href="/Activity/Index" target="_self">教育活动</a></li>
+            <li><a href="/Activity/Index/wbjz?type=1" target="_self">文博讲座</a></li>
+            <li><a href="/Activity/MuseumDay/BWGR" target="_self">国际博物馆日</a></li>
+            <li><a href="/PaintingLetter/Index/HXZX" target="_blank">画信在线</a></li>
+            <li><a href="/Activity/VolunteerHome/zyzzj" target="_self">志愿者之家</a></li>
+            <li><a href="/Activity/VolunteerHome/hyzj" target="_self">会员之家</a></li>
+            <li><a href="/Activity/VideoList/jcsp" target="_self">精彩视频</a> </li>
+        </ul>
+        <ul class="menulist">
+            <li><a href="/ForbiddenCityCollege/Index" target="_self">故宫学院（苏州）</a></li>
+            <li><a href="/ForbiddenCityCollege/Index" target="_self">学院动态</a></li>
+            <li><a href="/ForbiddenCityCollege/Index/yyfa" target="_self">运营方案</a></li>
+            <li><a href="/ForbiddenCityCollege/Index/lsh" target="_self">理事会</a></li>
+            <li><a href="/ForbiddenCityCollege/Activity/hdyy" target="_self">活动预约</a></li>
+        </ul>
+        <ul class="menulist">
+            <li><a href="/Ancient/Details/gjgjj">古籍图书馆</a> </li>
+            <li><a href="/Ancient/Details/gjgjj">古籍馆简介</a> </li>
+            <li><a href="/Ancient/Details/dzfw">读者服务</a> </li>
+            <li><a href="http://ilas.szmuseum.com:8030/" target="_blank">Ilas书目查询</a> </li>
+            <li><a href="/Ancient/BookList/zggj">珍贵古籍书影</a> </li>
+            <li><a href="/Ancient/NewBookList/xstj">新书推介</a> </li>
+        </ul>
+        <ul class="menulist" style="width: 66px;">
+            <li><a href="/Other/Leaveword" target="_blank">交流互动</a></li>
+            <li><a href="/Other/LeavewordForm/ReleaseMessage" target="_blank">发布留言</a></li>
+            <li><a href="/Other/Leaveword" target="_blank">留言列表</a></li>
+            <li><a href="/Other/Questionnaire/ReleaseSurvey" target="_blank">观众调查</a></li>
+            <li><a onclick="VisitPer();" href="javascript:void(0)">个人预约</a></li>
+            <li><a onclick="VisitTeam();" href="javascript:void(0)">团队预约</a></li>
+            <li><a href="/Other/News/Meeting" target="_blank">历届会议</a></li>
+            
+        </ul>
+    </div>
+</div>
+<div class="bottom">
+    <div class="bottomcent">
+        <ul>
+            <li><i class="address"></i><span>保定市莲池区东风路999号</span></li>
+            <li><i class="telephone"></i><span>0512-67575666</span></li>
+            <li><i class="mail"></i><span>215001 </span></li>
+            <li style="margin-right: 0">
+                <p>
+                    © 2010-2019 浩天博物馆 版权所有 冀ICP备06052086号</p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="izl-rmenu izl-rmenu1" id="totop">
+    <div class="btn btn-top">
+    </div>
+</div>
+<script src="https://www.szmuseum.com/StaticFile/Scripts/ScrollToTop.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    //跳转到个人预约
+    function VisitPer() {
+        //        if ($("#isLogin").val() == "0") {
+        //            $("#login").click();
+        //        } else {
+        //            window.open("/Account/VenuesReservation");
+        //        }
+
+        window.open("/Account/VenuesReservation");
+    }
+
+    //跳转到团队预约
+    function VisitTeam() {
+        if ($("#isLogin").val() == "0") {
+            $("#login").click();
+        } else {
+            window.open("/Account/TeamReservation");
+        }
+    }
+
+</script>
+
+    </div>
+    <div class="cont100">
+        <div id="myModal" class="reveal-modal">
+            <form id="user_form_0" class="cont-login" method="post" target="pass_reg_iframe_0"
+            action="#">
+            <h1>
+                <span>用户登录</span><a href="/Account/Register">立即注册</a>
+            </h1>
+            <p>
+                <i></i>
+                <input type="text" value="手机号/用户名/邮箱" onclick="show()" onblur="hide()" id="userName" />
+            </p>
+            <p style="margin-bottom: 10px;">
+                <i class="password"></i>
+                <input type="password" value="" id="pwd" />
+            </p>
+            <p style="margin: 0 auto;">
+                <span class="login-error"></span><a class="findpassword" href="/Account/FindPassword">
+                    找回密码 </a>
+            </p>
+            <p style="margin-top: 0;">
+                <span class="yellowbtn logbtn" id="btnLogin">登录</span>
+            </p>
+            </form>
+            <a class="close-reveal-modal">&#215;</a>
+        </div>
+    </div>
+    <input type="hidden" id="hidtypes" value="" />
+    <input type="hidden" id="IsVip" value=""/>
+        <input type="hidden" id="AdvertisementText" value="" />
+        <input type="hidden" id="AdvertisementSrc" value="https://file.szmuseum.com:8020/门户网站广告管理图片/20190831235535T3pjvF.png" />
+        <input type="hidden" id="AdvertisementUrl" value="http://www.szmuseum.com/News/Details/b1e05bfc-54fa-449d-afe5-df50f020c906" />
+    <div id="top">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(".indexfoot>i").hover(function () {
+        if ($(".indexbottom").hasClass("up")) {//关闭
+            $(this).removeClass().addClass("up");
+            $(".indexbottom").removeClass("up");
+        } else {//打开
+            $(this).removeClass().addClass("down");
+            $(".indexbottom").addClass("up");
+            $(".indexbottom.up").hover(function () {
+                $(".indexbottom").addClass("up");
+                $(".indexfoot>i").removeClass().addClass("down");
+            }, function () {
+                $(".indexbottom").removeClass("up");
+                $(".indexfoot>i").removeClass().addClass("up");
+            });
+        }
+    });
+
+    $(function () {
+        var href = window.location.href;
+        if (href.indexOf("page1") > -1) {//第一屏
+            setTimeout(function () {
+                $(".section1 .bg").addClass("bghover");
+            }, 1000);
+        }
+        //        $("body").floatAdd({});
+        //        $("#indexbox i").click(function () {
+        //            $("#indexbox").hide();
+        //        });
+    });
+
+    var imgurl = "https://www.szmuseum.com/StaticFile";
+</script>
